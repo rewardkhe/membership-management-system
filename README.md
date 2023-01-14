@@ -20,3 +20,19 @@ On successful completion of this assignment, you should have demonstrated that y
 
 • Design a text-based user interface
 _________________________________________________________________________________________________________________________
+
+Project structure:
+
+Rough draft, proper flow chart will replace this shortly.
+![img.png](img.png)
+
+_________________________________________________________________________________________________________________________
+
+Documentation:
+1. Logic flows: How logic are set and how users are expected to run the program
+2. files and folders: How is stored and organised.
+3. Naming convention: All the objects, methods and functions
+
+
+
+_________________________________________________________________________________________________________________________
