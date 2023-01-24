@@ -3,6 +3,7 @@ package com.company;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +21,7 @@ public class Main {
         else if ( firstLayer.equals("edit"))
         {
             System.out.println("Welcome to edit options ");
-            System.out.println("\n Enter 'add' or 'delete' or 'query' or 'save'.");
+            System.out.println("\n Enter 'add', 'delete', 'query' or 'save'.");
 
             Scanner secondLayerScanner = new Scanner(System.in);
             String secondLayer = secondLayerScanner.nextLine();
@@ -29,20 +30,39 @@ public class Main {
             {
                 System.out.println("Enter 'y' if you want to add a member record or 'n' to cancel." );
                 //get input y/n from user if y, output membersfile else cancel.
-                Scanner firstInputScanner = new Scanner(System.in);
-                String firstInput = firstInputScanner.nextLine();
+                Scanner InputScanner = new Scanner(System.in);
+                String firstInput = InputScanner.nextLine();
                 System.out.println(firstInput);
 
                 if (firstInput.equals("y"))
                 {
                     //add name James Bloggs; birthday 20/12/1978; pass Gold; mobile 0411111111; fee $60
-                    System.out.println("Input member details in following format: 'Name', 'Birthdate', 'Membership type', 'Contact number', 'Membership fee'");
-                    Scanner secondInputScanner = new Scanner(System.in);
-                    String secondInput = secondInputScanner.nextLine();
+//                    System.out.println("Input member details in following format: 'Name', 'Birthdate', 'Membership type', 'Contact number', 'Membership fee'");
+//                    Scanner secondInputScanner = new Scanner(System.in);
+//                    String secondInput = secondInputScanner.nextLine();
+                    String addAnother;
+                    String[] curr_input = new String[10];
+
+                    do {
+                        int i = 0;
+                        System.out.println("Input member details in following format: 'Name', 'Birthdate', 'Membership type', 'Contact number', 'Membership fee'");
+
+                        curr_input[i] = InputScanner.nextLine();
+                        i++;
+                        System.out.println("Do you want to add another record?");
+                        addAnother = InputScanner.nextLine();
+
+
+
+                    }
+                    while (addAnother.equals ("y"));
+//                    System.out.println("do while loop exit");
+
 
                     try {
                         BufferedWriter writer = new BufferedWriter(new FileWriter("membersFile.txt"));
-                        writer.write("\n" + secondInput);
+//                        writer.write("\n" + secondInput);
+                        writer.write(Arrays.toString(curr_input));
                         writer.close();
                     } catch (IOException e) {
                         e.printStackTrace();
