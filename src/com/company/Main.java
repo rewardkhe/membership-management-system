@@ -3,6 +3,7 @@ package com.company;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -32,7 +33,7 @@ public class Main {
                 //get input y/n from user if y, output membersfile else cancel.
                 Scanner InputScanner = new Scanner(System.in);
                 String firstInput = InputScanner.nextLine();
-                System.out.println(firstInput);
+//                System.out.println(firstInput);
 
                 if (firstInput.equals("y"))
                 {
@@ -41,15 +42,14 @@ public class Main {
 //                    Scanner secondInputScanner = new Scanner(System.in);
 //                    String secondInput = secondInputScanner.nextLine();
                     String addAnother;
-                    String[] curr_input = new String[10];
-
+                    ArrayList<String> curr_input = new ArrayList<>();
+                    int i = 0;
                     do {
-                        int i = 0;
+//                        int i = 0;
                         System.out.println("Input member details in following format: 'Name', 'Birthdate', 'Membership type', 'Contact number', 'Membership fee'");
 
-                        curr_input[i] = InputScanner.nextLine();
-                        i++;
-                        System.out.println("Do you want to add another record?");
+                        curr_input.add(InputScanner.nextLine());
+                        System.out.println("Do you want to add another record? (y/n)");
                         addAnother = InputScanner.nextLine();
 
 
@@ -60,9 +60,9 @@ public class Main {
 
 
                     try {
-                        BufferedWriter writer = new BufferedWriter(new FileWriter("membersFile.txt"));
+                        BufferedWriter writer = new BufferedWriter(new FileWriter("membersFile.txt", true));
 //                        writer.write("\n" + secondInput);
-                        writer.write(Arrays.toString(curr_input));
+                        writer.append ("\n" +curr_input.toString()); //It prints out all the values from an array
                         writer.close();
                     } catch (IOException e) {
                         e.printStackTrace();

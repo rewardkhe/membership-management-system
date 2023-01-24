@@ -1,1 +1,2 @@
-record 2nullnullnull
+[Alex Finns; 20/04/2000; Gold; 04837833; $80.0, Zachary Sutton; 20/02/2000; Silver; 2133133; $40.0][Bailey Scholes; 20/12/1983; Silver; 1111; $60.0]
+[Hahn Scott; 11/11/2014; Silver; 1111; $80.0, Imran rasheed; 12/03/1994; Silver; 2133133; $80.0]
